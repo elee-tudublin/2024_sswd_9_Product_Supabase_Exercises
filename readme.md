@@ -1,4 +1,4 @@
-# Lab 8: Using a Supabase DB in the Products Web App
+# Lab 11: Supabase Lab Exercises
 
 
 
