@@ -37,7 +37,7 @@ The start site includes solutions to exercises from the previous lab. Products i
 The `Product` model class has been updated to match the **product** table in Supabase.
 
 * Note the `_` before `id` - this means it will be excluded if missing, for example when iserting a new product (as the new product id will be provided by the database)
-* `@validator('thumbnail')` This is an example **Pydantic** validator which provides a default thumbnail image if none is provided. For more validator options, see https://docs.pydantic.dev/latest/concepts/validators/
+* `@validator('thumbnail')` This is an example **Pydantic** validator which provides a default thumbnail image if none is provided. For more validator options, see https://docs.pydantic.dev/latest/concepts/validators/#validation-of-default-values
 
 `app/models/product.py`
 
