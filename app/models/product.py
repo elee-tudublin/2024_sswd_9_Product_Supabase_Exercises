@@ -1,7 +1,7 @@
 # A model class for Product items
 # See https://docs.pydantic.dev/latest/concepts/models/
 
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, ValidationError, ValidationInfo, field_validator
 from typing import Optional
 
 class Product(BaseModel):
@@ -15,8 +15,8 @@ class Product(BaseModel):
 
     # https://docs.pydantic.dev/latest/concepts/validators/
     # if thumbnail missing, use a default
-    @validator('thumbnail')
-    def default_image(cls, v):
+    @field_validator('thumbnail')
+    def default_image(cls, v: str, info: ValidationInfo) -> str:
         assert v is not None, 'thumbnail image not supplied, using placeholder'
         if (v == "") :
             return("/static/images/product/placeholder.webp")
